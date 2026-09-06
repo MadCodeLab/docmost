@@ -84,23 +84,30 @@ export function AppHeader() {
             />
           </Tooltip>
 
-          <Link to="/home" className={classes.brand} aria-label="Docmost">
+          <Link to="/home" className={classes.brand} aria-label="Mad Code Lab">
             <Box hiddenFrom="sm" className={classes.brandIcon}>
               <img
-                src="/icons/favicon-32x32.png"
-                alt="Docmost"
-                width={22}
-                height={22}
+                src="/icons/logo-icon.png"
+                alt="Mad Code Lab"
+                width={24}
+                height={24}
               />
             </Box>
-            <Text
-              size="lg"
-              fw={600}
-              style={{ userSelect: "none" }}
-              visibleFrom="sm"
-            >
-              Docmost
-            </Text>
+            <Group gap={8} align="center" visibleFrom="sm">
+              <img
+                src="/icons/logo-icon.png"
+                alt="Mad Code Lab"
+                width={24}
+                height={24}
+              />
+              <Text
+                size="lg"
+                fw={700}
+                style={{ userSelect: "none" }}
+              >
+                Mad Code Lab
+              </Text>
+            </Group>
           </Link>
 
           <Group ml={50} gap={5} className={classes.links} visibleFrom="sm">

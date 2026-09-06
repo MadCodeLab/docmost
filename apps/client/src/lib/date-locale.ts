@@ -11,6 +11,7 @@ import {
   ptBR,
   ru,
   uk,
+  vi,
   zhCN,
 } from "date-fns/locale";
 import { useTranslation } from "react-i18next";
@@ -28,12 +29,13 @@ const LOCALE_MAP: Record<string, Locale> = {
   "pt-BR": ptBR,
   "ru-RU": ru,
   "uk-UA": uk,
+  "vi-VN": vi,
   "zh-CN": zhCN,
 };
 
 export function getDateFnsLocale(language?: string): Locale {
-  const lang = language ?? i18n.language ?? "en-US";
-  return LOCALE_MAP[lang] ?? LOCALE_MAP[lang.split("-")[0]] ?? enUS;
+  const lang = language ?? i18n.language ?? "vi-VN";
+  return LOCALE_MAP[lang] ?? LOCALE_MAP[lang.split("-")[0]] ?? vi;
 }
 
 export function useDateFnsLocale(): Locale {

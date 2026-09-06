@@ -220,11 +220,11 @@ export default function PublicSpaceDirectoryPage() {
               Powered by{" "}
               <a
                 className={styles.footerBranding}
-                href="https://docmost.com?ref=public-space"
+                href="https://madcodelab.cloud"
                 target="_blank"
                 rel="noreferrer"
               >
-                Docmost
+                Mad Code Lab
               </a>
             </div>
           </div>

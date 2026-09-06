@@ -53,8 +53,9 @@ function LanguageSwitcher() {
         { value: "uk-UA", label: "Українська (Ukrainian)" },
         { value: "ru-RU", label: "Русский (Russian)" },
         { value: "zh-CN", label: "中文 (简体)" },
+        { value: "vi-VN", label: "Tiếng Việt (Vietnamese)" },
       ]}
-      value={language || "en-US"}
+      value={language || "vi-VN"}
       onChange={handleChange}
       allowDeselect={false}
       checkIconPosition="right"

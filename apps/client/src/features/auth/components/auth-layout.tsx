@@ -11,14 +11,10 @@ export function AuthLayout({ children }: AuthLayoutProps) {
     <>
       <Group justify="center" gap={8} className={classes.logo}>
         <img
-          src="/icons/favicon-32x32.png"
-          alt="Docmost"
-          width={22}
-          height={22}
+          src="/icons/logo.png"
+          alt="Mad Code Lab"
+          style={{ height: "48px", objectFit: "contain", userSelect: "none" }}
         />
-        <Text size="28px" fw={700} style={{ userSelect: "none" }}>
-          Docmost
-        </Text>
       </Group>
       <main>{children}</main>
     </>
