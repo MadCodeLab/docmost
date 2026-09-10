@@ -1,0 +1,1 @@
+import{Nn as e,h as t}from"./vendor-mantine-niIJBfdP.js";import{on as n}from"./api-client-Ddc6UY5g.js";import{Wi as r}from"./index-CPt29CRv.js";var i=e();function a({icon:e,isBase:a}){return e?(0,i.jsx)(i.Fragment,{children:e}):(0,i.jsx)(t,{variant:`transparent`,color:`gray`,size:18,children:a?(0,i.jsx)(r,{size:18}):(0,i.jsx)(n,{size:18})})}export{a as t};

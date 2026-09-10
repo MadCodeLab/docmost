@@ -1,0 +1,1 @@
+import"./rolldown-runtime-aKtaBQYM.js";import{Fn as e,H as t,Nn as n,m as r}from"./vendor-mantine-niIJBfdP.js";e();var i=n();function a({title:e}){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(r,{order:1,size:`h3`,children:e}),(0,i.jsx)(t,{my:`md`})]})}export{a as t};

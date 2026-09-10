@@ -1,0 +1,1 @@
+import{t as e}from"./api-client-Ddc6UY5g.js";async function t(t){return(await e.post(`/oauth/authorize-info`,t)).data}async function n(t){return(await e.post(`/oauth/authorize`,t)).data}async function r(){return(await e.post(`/oauth/grants`,{})).data}async function i(t){await e.post(`/oauth/grants/revoke`,{grantId:t})}export{i,t as n,r,n as t};

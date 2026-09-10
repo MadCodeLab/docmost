@@ -1,0 +1,26 @@
+services:
+  docmost:
+    environment:
+      APP_URL: "https://wiki.madcodelab.cloud"
+      APP_SECRET: "44d2e7e3a0d83294ae863e38595cf977c11e8309a38105e3de92819e27d162e6"
+      DATABASE_URL: "postgresql://docmost:7448b06d6e7cbb5c23f0d6dcfed2db6c@db:5432/docmost"
+      AI_DRIVER: "openai-compatible"
+      OPENAI_API_URL: "https://ecommerce-reduction-hearing-whenever.trycloudflare.com/v1"
+      OPENAI_API_KEY: "sk-ag-3ee0c0193e3f3cae358e75fca84984b3a505d2ac"
+      AI_COMPLETION_MODEL: "gemini-3.8-flash-high"
+      AI_MAX_TOKENS: "65536"
+    volumes:
+      - ./apps/client/dist:/app/apps/client/dist
+      - ./server-overrides/license-check.service.js:/app/apps/server/dist/integrations/environment/license-check.service.js
+      - ./server-overrides/license.service.js:/app/apps/server/dist/ee/licence/license.service.js
+      - ./server-overrides/ai-search.service.js:/app/apps/server/dist/ee/ai/services/ai-search.service.js
+      - ./server-overrides/ai.constants.js:/app/apps/server/dist/ee/ai/ai.constants.js
+      - ./server-overrides/context-manager.js:/app/apps/server/dist/ee/ai-chat/utils/context-manager.js
+      - ./server-overrides/page.service.js:/app/apps/server/dist/core/page/services/page.service.js
+      - ./server-overrides/ai-chat.service.js:/app/apps/server/dist/ee/ai-chat/ai-chat.service.js
+      - ./server-overrides/ai-chat-tools.service.js:/app/apps/server/dist/ee/ai-chat/ai-chat-tools.service.js
+
+  db:
+    image: pgvector/pgvector:pg18
+    environment:
+      POSTGRES_PASSWORD: 7448b06d6e7cbb5c23f0d6dcfed2db6c
