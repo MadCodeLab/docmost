@@ -220,7 +220,7 @@ export default function PublicSpaceDirectoryPage() {
               Powered by{" "}
               <a
                 className={styles.footerBranding}
-                href="https://madcodelab.cloud"
+                href="https://hqlq.cloud"
                 target="_blank"
                 rel="noreferrer"
               >
