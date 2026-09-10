@@ -84,11 +84,11 @@ export function AppHeader() {
             />
           </Tooltip>
 
-          <Link to="/home" className={classes.brand} aria-label="Mad Code Lab">
+          <Link to="/home" className={classes.brand} aria-label="HQLQ Team">
             <Box hiddenFrom="sm" className={classes.brandIcon}>
               <img
                 src="/icons/logo-icon.png"
-                alt="Mad Code Lab"
+                alt="HQLQ Team"
                 width={24}
                 height={24}
               />
@@ -96,7 +96,7 @@ export function AppHeader() {
             <Group gap={8} align="center" visibleFrom="sm">
               <img
                 src="/icons/logo-icon.png"
-                alt="Mad Code Lab"
+                alt="HQLQ Team"
                 width={24}
                 height={24}
               />
@@ -105,7 +105,7 @@ export function AppHeader() {
                 fw={700}
                 style={{ userSelect: "none" }}
               >
-                Mad Code Lab
+                HQLQ Team
               </Text>
             </Group>
           </Link>

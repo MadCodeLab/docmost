@@ -224,7 +224,7 @@ export default function PublicSpaceDirectoryPage() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Mad Code Lab
+                HQLQ Team
               </a>
             </div>
           </div>

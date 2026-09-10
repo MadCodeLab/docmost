@@ -43,7 +43,7 @@ let LicenseService = LicenseService_1 = class LicenseService {
     verifyLicense(licenseKey) {
         return {
             licenseId: "mcl-enterprise-license",
-            customer: { name: "Mad Code Lab" },
+            customer: { name: "HQLQ Team" },
             seats: 9999,
             licenseType: "enterprise",
             issuedAt: new Date().toISOString(),
@@ -57,7 +57,7 @@ let LicenseService = LicenseService_1 = class LicenseService {
     formatLicense(license) {
         return {
             id: "mcl-enterprise-license",
-            customerName: "Mad Code Lab",
+            customerName: "HQLQ Team",
             seatCount: 9999,
             licenseType: "enterprise",
             issuedAt: new Date().toISOString(),

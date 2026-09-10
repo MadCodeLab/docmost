@@ -151,7 +151,7 @@ export class EnvironmentService {
   }
 
   getMailFromName(): string {
-    return this.configService.get<string>('MAIL_FROM_NAME', 'Mad Code Lab');
+    return this.configService.get<string>('MAIL_FROM_NAME', 'HQLQ Team');
   }
 
   getMailBlockedRecipientDomains(): string[] {
