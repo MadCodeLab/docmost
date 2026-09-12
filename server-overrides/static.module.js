@@ -63,8 +63,12 @@ let StaticModule = class StaticModule {
             await app.register(static_1.default, {
                 root: clientDistPath,
                 wildcard: false,
-                setHeaders: (reply, pathName) => {
-                    reply.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+                setHeaders: (res, pathName) => {
+                    if (res && typeof res.setHeader === 'function') {
+                        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+                    } else if (res && typeof res.header === 'function') {
+                        res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
+                    }
                 },
             });
             app.get(RENDER_PATH, (req, res) => {
