@@ -19,6 +19,7 @@ services:
       - ./server-overrides/page.service.js:/app/apps/server/dist/core/page/services/page.service.js
       - ./server-overrides/ai-chat.service.js:/app/apps/server/dist/ee/ai-chat/ai-chat.service.js
       - ./server-overrides/ai-chat-tools.service.js:/app/apps/server/dist/ee/ai-chat/ai-chat-tools.service.js
+      - ./server-overrides/static.module.js:/app/apps/server/dist/integrations/static/static.module.js
 
   db:
     image: pgvector/pgvector:pg18
