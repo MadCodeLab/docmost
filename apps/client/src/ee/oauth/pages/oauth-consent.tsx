@@ -19,6 +19,7 @@ import {
 import { notifications } from "@mantine/notifications";
 import {
   IconAlertTriangle,
+  IconCheck,
   IconEye,
   IconPencil,
 } from "@tabler/icons-react";
@@ -173,6 +174,7 @@ function ConsentCard({ info, currentUser, params }: ConsentCardProps) {
     info.scopes.filter((scope) => scope === "read" || scope === "write"),
   );
   const [submitting, setSubmitting] = useState<"approve" | "deny" | null>(null);
+  const [authCode, setAuthCode] = useState<string | null>(null);
 
   const scopeRows = [
     {
@@ -204,7 +206,26 @@ function ConsentCard({ info, currentUser, params }: ConsentCardProps) {
 
     try {
       const res = await approveOAuthAuthorization(payload);
-      window.location.replace(res.redirectUrl);
+      const redirectUrl = res?.redirectUrl || (res as any)?.data?.redirectUrl || "";
+      if (
+        typeof redirectUrl === "string" &&
+        (redirectUrl.startsWith("urn:") || redirectUrl.includes("urn:ietf:wg:oauth:2.0:oob"))
+      ) {
+        let code = "";
+        try {
+          const match = redirectUrl.match(/[?&]code=([^&]+)/);
+          code = match ? decodeURIComponent(match[1]) : redirectUrl;
+        } catch {
+          code = redirectUrl;
+        }
+        setSubmitting(null);
+        setAuthCode(code);
+        if (navigator?.clipboard?.writeText) {
+          navigator.clipboard.writeText(code).catch(() => {});
+        }
+        return;
+      }
+      window.location.replace(redirectUrl || res.redirectUrl);
     } catch (err) {
       if (errorStatus(err) === 401) {
         window.location.replace(
@@ -232,6 +253,48 @@ function ConsentCard({ info, currentUser, params }: ConsentCardProps) {
         loginRedirectUrl(location.pathname, location.search),
       );
     }
+  }
+
+  if (authCode) {
+    return (
+      <Stack gap="lg" align="center" ta="center">
+        <ThemeIcon size={48} radius="xl" color="green">
+          <IconCheck size={28} />
+        </ThemeIcon>
+        <Title order={3} fw={600}>
+          {t("Authorization Code")}
+        </Title>
+        <Text size="sm" c="dimmed">
+          {t("Please copy this code and paste it into your application:")}
+        </Text>
+        <Paper
+          withBorder
+          p="md"
+          radius="md"
+          w="100%"
+          bg="var(--mantine-color-gray-light)"
+          style={{ wordBreak: "break-all" }}
+        >
+          <Text ff="monospace" fw={600} size="md">
+            {authCode}
+          </Text>
+        </Paper>
+        <Button
+          fullWidth
+          onClick={() => {
+            if (navigator?.clipboard?.writeText) {
+              navigator.clipboard.writeText(authCode).catch(() => {});
+            }
+            notifications.show({
+              message: t("Copied code to clipboard!"),
+              color: "green",
+            });
+          }}
+        >
+          {t("Copy Code")}
+        </Button>
+      </Stack>
+    );
   }
 
   return (
