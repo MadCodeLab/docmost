@@ -1,7 +1,7 @@
 services:
   docmost:
     environment:
-      APP_URL: "https://wiki.hqlglobal.cloud"
+      APP_URL: "https://wiki.madcodelab.cloud"
       APP_SECRET: "44d2e7e3a0d83294ae863e38595cf977c11e8309a38105e3de92819e27d162e6"
       DATABASE_URL: "postgresql://docmost:7448b06d6e7cbb5c23f0d6dcfed2db6c@db:5432/docmost"
       AI_DRIVER: "openai-compatible"
@@ -19,6 +19,7 @@ services:
       - ./server-overrides/page.service.js:/app/apps/server/dist/core/page/services/page.service.js
       - ./server-overrides/ai-chat.service.js:/app/apps/server/dist/ee/ai-chat/ai-chat.service.js
       - ./server-overrides/ai-chat-tools.service.js:/app/apps/server/dist/ee/ai-chat/ai-chat-tools.service.js
+      - ./server-overrides/static.module.js:/app/apps/server/dist/integrations/static/static.module.js
 
   db:
     image: pgvector/pgvector:pg18

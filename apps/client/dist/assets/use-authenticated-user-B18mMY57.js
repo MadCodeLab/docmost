@@ -1,1 +1,1 @@
-import{t as e}from"./useQuery-BgCijgtG.js";import{Mi as t}from"./index-CPt29CRv.js";function n(n=!0){return e({queryKey:[`currentUser`],queryFn:t,retry:!1,staleTime:300*1e3,enabled:n})}export{n as t};
+import{t as e}from"./useQuery-BgCijgtG.js";import{Mi as t}from"./index-hqlq0002.js";function n(n=!0){return e({queryKey:[`currentUser`],queryFn:t,retry:!1,staleTime:300*1e3,enabled:n})}export{n as t};
