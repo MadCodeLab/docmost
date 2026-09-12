@@ -1,0 +1,2 @@
+import{ir as e,ln as t,sr as n,wt as r}from"./chunk-J7OUQ5F2-BUuuYMiX.js";import{n as i}from"./mermaid-parser.core-DLGMGA-3.js";var a={parse:n(async t=>{let n=await i(`info`,t);e.debug(n)},`parse`)},o={version:`11.16.1`},s={parser:a,db:{getVersion:n(()=>o.version,`getVersion`)},renderer:{draw:n((n,i,a)=>{e.debug(`rendering info diagram
+`+n);let o=r(i);t(o,100,400,!0),o.append(`g`).append(`text`).attr(`x`,100).attr(`y`,40).attr(`class`,`version`).attr(`font-size`,32).style(`text-anchor`,`middle`).text(`v${a}`)},`draw`)}};export{s as diagram};

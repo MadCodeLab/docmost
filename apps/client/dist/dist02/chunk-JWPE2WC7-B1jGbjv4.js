@@ -1,0 +1,1 @@
+import{sr as e}from"./chunk-J7OUQ5F2-BUuuYMiX.js";function t(e,t){e.accDescr&&t.setAccDescription?.(e.accDescr),e.accTitle&&t.setAccTitle?.(e.accTitle),e.title&&t.setDiagramTitle?.(e.title)}e(t,`populateCommonDb`);export{t};

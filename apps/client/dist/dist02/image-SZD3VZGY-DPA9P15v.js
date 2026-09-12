@@ -1,0 +1,1 @@
+import{K as e,q as t}from"./excalidraw-utils-CCIl46J0.js";export{t as decodePngMetadata,e as encodePngMetadata};
