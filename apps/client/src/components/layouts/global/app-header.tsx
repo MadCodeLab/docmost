@@ -87,7 +87,7 @@ export function AppHeader() {
           <Link to="/home" className={classes.brand} aria-label="HQL Global">
             <Box hiddenFrom="sm" className={classes.brandIcon}>
               <img
-                src="/icons/logo-icon.png"
+                src="/icons/hql-global-icon.png?v=3"
                 alt="HQL Global"
                 width={24}
                 height={24}
@@ -95,7 +95,7 @@ export function AppHeader() {
             </Box>
             <Group gap={8} align="center" visibleFrom="sm">
               <img
-                src="/icons/logo-icon.png"
+                src="/icons/hql-global-icon.png?v=3"
                 alt="HQL Global"
                 width={24}
                 height={24}
@@ -115,14 +115,14 @@ export function AppHeader() {
           </Group>
         </Group>
 
-        <div>
-          <Group visibleFrom="sm">
+        <Box style={{ display: "flex", alignItems: "center" }}>
+          <Group visibleFrom="sm" align="center">
             <SearchControl onClick={searchSpotlight.open} />
           </Group>
-          <Group hiddenFrom="sm">
+          <Group hiddenFrom="sm" align="center">
             <SearchMobileControl onSearch={searchSpotlight.open} />
           </Group>
-        </div>
+        </Box>
 
         <Group px={"xl"} wrap="nowrap">
           {aiChatEnabled && (

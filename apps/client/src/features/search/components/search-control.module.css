@@ -5,6 +5,9 @@
     border-radius: var(--mantine-radius-md);
     color: var(--mantine-color-placeholder);
     border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     @mixin light {
         border-color: var(--mantine-color-gray-3);
