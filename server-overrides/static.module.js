@@ -43,13 +43,15 @@ let StaticModule = class StaticModule {
                 BILLING_TRIAL_DAYS: this.environmentService.isCloud()
                     ? this.environmentService.getBillingTrialDays()
                     : undefined,
-                BETA_PUBLIC_SPACES: this.environmentService.isBetaPublicSpaces(),
                 POSTHOG_HOST: this.environmentService.getPostHogHost(),
                 POSTHOG_KEY: this.environmentService.getPostHogKey(),
-                AI_VECTOR_DRIVER: this.environmentService.getAiVectorDriver() === 'turbopuffer'
-                    ? 'turbopuffer'
-                    : undefined,
             };
+            if (typeof this.environmentService.isBetaPublicSpaces === 'function') {
+                configString.BETA_PUBLIC_SPACES = this.environmentService.isBetaPublicSpaces();
+            }
+            if (typeof this.environmentService.getAiVectorDriver === 'function') {
+                configString.AI_VECTOR_DRIVER = this.environmentService.getAiVectorDriver() === 'turbopuffer' ? 'turbopuffer' : undefined;
+            }
             const windowScriptContent = `<script>window.CONFIG=${JSON.stringify(configString)};</script>`;
             if (!fs.existsSync(indexTemplateFilePath)) {
                 fs.copyFileSync(indexFilePath, indexTemplateFilePath);
