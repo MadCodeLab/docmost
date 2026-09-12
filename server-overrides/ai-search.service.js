@@ -164,7 +164,7 @@ let AiSearchService = AiSearchService_1 = class AiSearchService {
         }
         const languageDirective = (0, locale_language_1.buildLanguageDirective)(locale);
         const defaultLanguage = (0, locale_language_1.languageFromLocale)(locale);
-        const systemPrompt = 'Bạn là HQLQ Team AI, trợ lý AI thông minh tích hợp cho không gian làm việc HQLQ Team.' +
+        const systemPrompt = 'Bạn là HQL Global AI, trợ lý AI thông minh tích hợp cho không gian làm việc HQL Global.' +
             ' Nhiệm vụ của bạn là giải đáp câu hỏi của người dùng dựa trên thông tin tài liệu trong không gian làm việc.' +
             ' Nếu tài liệu có thông tin liên quan, hãy trả lời chính xác, trích dẫn rõ ràng.' +
             ' Nếu trong tài liệu không có thông tin người dùng tìm, hãy tóm tắt các tài liệu hiện có trong không gian làm việc và hỗ trợ giải đáp một cách hữu ích nhất.' +
@@ -227,7 +227,7 @@ let AiSearchService = AiSearchService_1 = class AiSearchService {
             contextText = '(Không gian làm việc hiện tại chưa có tài liệu nào)';
         }
 
-        const userPrompt = `Ngữ cảnh tài liệu từ không gian làm việc HQLQ Team:
+        const userPrompt = `Ngữ cảnh tài liệu từ không gian làm việc HQL Global:
 ${contextText}
 
 Câu hỏi của người dùng: ${query}

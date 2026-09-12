@@ -12,7 +12,7 @@ export function AuthLayout({ children }: AuthLayoutProps) {
       <Group justify="center" gap={8} className={classes.logo}>
         <img
           src="/icons/logo.png"
-          alt="HQLQ Team"
+          alt="HQL Global"
           style={{ height: "48px", objectFit: "contain", userSelect: "none" }}
         />
       </Group>

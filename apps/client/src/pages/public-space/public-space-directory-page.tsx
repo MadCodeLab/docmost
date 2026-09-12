@@ -220,11 +220,11 @@ export default function PublicSpaceDirectoryPage() {
               Powered by{" "}
               <a
                 className={styles.footerBranding}
-                href="https://hqlq.cloud"
+                href="https://hqlglobal.cloud"
                 target="_blank"
                 rel="noreferrer"
               >
-                HQLQ Team
+                HQL Global
               </a>
             </div>
           </div>

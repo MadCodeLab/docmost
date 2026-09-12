@@ -10,7 +10,7 @@ declare global {
 }
 
 export function getAppName(): string {
-  return "HQLQ Team";
+  return "HQL Global";
 }
 
 export function getAppUrl(): string {

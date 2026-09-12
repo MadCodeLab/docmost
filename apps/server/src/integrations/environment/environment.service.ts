@@ -151,7 +151,7 @@ export class EnvironmentService {
   }
 
   getMailFromName(): string {
-    return this.configService.get<string>('MAIL_FROM_NAME', 'HQLQ Team');
+    return this.configService.get<string>('MAIL_FROM_NAME', 'HQL Global');
   }
 
   getMailBlockedRecipientDomains(): string[] {
