@@ -1,0 +1,1 @@
+import"./rolldown-runtime-aKtaBQYM.js";import{Fn as e,Nn as t}from"./vendor-mantine-niIJBfdP.js";import{Xr as n}from"./index-hqlq0002.js";import{t as r}from"./setup-workspace-form-4rDpgnEL.js";e();var i=t();function a(){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(n,{title:`Create Workspace`}),(0,i.jsx)(r,{})]})}export{a as default};

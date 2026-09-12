@@ -1,0 +1,1 @@
+import{sn as e}from"./api-client-Ddc6UY5g.js";var t=e(`outline`,`arrows-diagonal`,`ArrowsDiagonal`,[[`path`,{d:`M16 4l4 0l0 4`,key:`svg-0`}],[`path`,{d:`M14 10l6 -6`,key:`svg-1`}],[`path`,{d:`M8 20l-4 0l0 -4`,key:`svg-2`}],[`path`,{d:`M4 20l6 -6`,key:`svg-3`}]]);export{t};
