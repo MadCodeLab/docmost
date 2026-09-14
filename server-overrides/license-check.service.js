@@ -13,7 +13,37 @@ exports.LicenseCheckService = void 0;
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
 const environment_service_1 = require("./environment.service");
-const features_1 = require("../../common/features");
+const ALL_FEATURES = [
+    'sso:custom',
+    'sso:google',
+    'mfa',
+    'api:keys',
+    'comment:resolution',
+    'page:permissions',
+    'ai',
+    'import:confluence',
+    'import:docx',
+    'import:pdf',
+    'attachment:indexing',
+    'security:settings',
+    'mcp',
+    'scim',
+    'page:verification',
+    'audit:logs',
+    'retention',
+    'sharing:controls',
+    'comment:viewer',
+    'templates',
+    'export:pdf',
+    'spaces:personal',
+    'export:docx',
+    'bases',
+    'oauth',
+    'ai:controls',
+    'mcp:controls',
+    'public-space:appearance',
+    'siem',
+];
 
 let LicenseCheckService = class LicenseCheckService {
     constructor(moduleRef, environmentService) {
@@ -27,10 +57,10 @@ let LicenseCheckService = class LicenseCheckService {
         return true;
     }
     getFeatures(licenseKey) {
-        return Object.values(features_1.Feature);
+        return ALL_FEATURES;
     }
     resolveFeatures(licenseKey, plan) {
-        return Object.values(features_1.Feature);
+        return ALL_FEATURES;
     }
     resolveTier(licenseKey, plan) {
         return "enterprise";
