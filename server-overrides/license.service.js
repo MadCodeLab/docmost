@@ -12,7 +12,37 @@ var LicenseService_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LicenseService = void 0;
 const common_1 = require("@nestjs/common");
-const features_1 = require("../../common/features");
+const ALL_FEATURES = [
+    'sso:custom',
+    'sso:google',
+    'mfa',
+    'api:keys',
+    'comment:resolution',
+    'page:permissions',
+    'ai',
+    'import:confluence',
+    'import:docx',
+    'import:pdf',
+    'attachment:indexing',
+    'security:settings',
+    'mcp',
+    'scim',
+    'page:verification',
+    'audit:logs',
+    'retention',
+    'sharing:controls',
+    'comment:viewer',
+    'templates',
+    'export:pdf',
+    'spaces:personal',
+    'export:docx',
+    'bases',
+    'oauth',
+    'ai:controls',
+    'mcp:controls',
+    'public-space:appearance',
+    'siem',
+];
 const workspace_repo_1 = require("../../database/repos/workspace/workspace.repo");
 
 let LicenseService = LicenseService_1 = class LicenseService {
@@ -32,7 +62,7 @@ let LicenseService = LicenseService_1 = class LicenseService {
         return true;
     }
     getFeatures(licenseKey) {
-        return Object.values(features_1.Feature);
+        return ALL_FEATURES;
     }
     getLicenseType(licenseKey) {
         return "enterprise";
